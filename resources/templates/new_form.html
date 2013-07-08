@@ -1,0 +1,25 @@
+{{> header}}
+
+<div class="span8">
+    <form id="data" action="/new/save" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <div class="onde-panel"></div>
+            <p class="actions"><button class="btn btn-success">{{strings.save}}</button></p>
+        </fieldset>
+    </form>
+</div>
+
+<div class="span4">
+    {{#metadata}}
+    {{> metadata}}
+    {{/metadata}}
+</div>
+
+<script type="text/javascript">
+    var schema = {{{schema}}};
+    var data = {{{data}}};
+</script>
+
+{{> footer}}
+
+

@@ -1,0 +1,31 @@
+{{> header}}
+
+
+<div class="span12">
+    <h3>{{strings.new-biblio}}</h3>
+    <form action="/new" method="POST">
+        <fieldset>
+            <legend>{{from-title}}</legend>
+            <input name="title" type="text" />
+            <button class='btn'>{{strings.create}}</button>
+        </fieldset>
+    </form>
+    <form action="/new" method="POST">
+        <fieldset>
+            <legend>{{strings.from-doi}}</legend>
+            <input name="doi" type="text" />
+            <button class='btn'>{{strings.create}}</button>
+        </fieldset>
+    </form>
+    <!--
+    <form action="/new" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>From PDF</legend>
+            <input name="pdf" type="file" />
+            <button class='btn'>Create</button>
+        </fieldset>
+    </form>
+    -->
+</div>
+
+{{> footer}}

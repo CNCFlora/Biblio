@@ -1,0 +1,24 @@
+{{> header}}
+
+<form action="/" class='span12'>
+    <div class="input-append input-prepend">
+        <input class="span4" type="text" name="query"
+                placeholder="Search..." value="{{query}}">
+        <button class="btn" type="search">{{strings.search}}</button>
+    </div>
+</form>
+
+<div class="span12">
+    {{#query}}
+    {{^result}}
+        <p>{{strings.no-result}}</p>
+    {{/result}}
+    <ul>
+        {{#result}}
+        <li><a href="/biblio/{{_id}}">{{fullCitation}}</a></li>
+        {{/result}}
+    </ul>
+    {{/query}}
+</div>
+
+{{> footer}}

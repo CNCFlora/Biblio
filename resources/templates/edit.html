@@ -1,0 +1,30 @@
+{{> header}}
+
+<div class="span8">
+    {{#biblio}}
+    <form id="data" action="/biblio/{{_id}}" method="POST">
+        <fieldset>
+            <div class="onde-panel"></div>
+            <p class="actions"><button class="btn btn-success">{{strings.save}}</button></p>
+        </fieldset>
+    </form>
+    {{/biblio}}
+</div>
+
+<div class="span4">
+    {{#metadata}}
+    {{> metadata}}
+    {{/metadata}}
+    <form action="/biblio/{{biblio._id}}/delete" method='POST'>
+        <button class="btn btn-danger">{{strings.delete}}</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var schema = {{{schema}}};
+    var data = {{{data}}};
+</script>
+
+{{> footer}}
+
+

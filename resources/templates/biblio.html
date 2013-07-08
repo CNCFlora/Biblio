@@ -1,0 +1,47 @@
+{{> header}}
+
+<div class="span8">
+    {{#biblio}}
+    <h4>{{strings.bibliography}}</h4>
+    <p><strong>{{strings.title}}</strong>: {{title}}</p>
+    <p><strong>{{strings.author}}</strong>: 
+        {{#author}}
+            {{name}};
+        {{/author}}
+    </p>
+    <p>{{abstract}}</p>
+    <p><strong>{{strings.type}}</strong>: {{type}}</p>
+    <p><strong>{{strings.year}}</strong>: {{year}}</p>
+    <p><strong>{{strings.sequence}}</strong>: {{sequence}}</p>
+    <p><strong>{{strings.contact}}</strong>: 
+        {{#contact}}
+            {{name}}&lt;{{email}}&gt; ;
+        {{/contact}}
+    </p>
+    <p><strong>{{strings.link}}</strong>:
+        <ul>
+        {{#link}}
+            <li><a href="{{url}}">{{anchor}}</a></li>
+        {{/link}}
+        </ul>
+    </p>
+    <p><strong>{{strings.full-citation}}</strong>: {{fullCitation}}</p>
+    <p><strong>{{strings.short-citation}}</strong>: {{shortCitation}}</p>
+    <p>{{{more}}}</p>
+    <p>{{{details}}}</p>
+    {{/biblio}}
+</div>
+
+<div class="span4">
+    <h4>Metadata</h4>
+    {{#metadata}}
+    {{> metadata}}
+    {{/metadata}}
+    {{#logged}}
+    <p>
+        <a href="/biblio/{{biblio._id}}/edit" class="btn btn-mini"><i class='icon-edit'></i> {{strings.edit}}</a>
+    </p>
+    {{/logged}}
+</div>
+
+{{> footer}}

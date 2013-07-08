@@ -1,0 +1,8 @@
+COUCH_AUTH=""
+COUCH_HOST="localhost:5984"
+COUCH_BASE="cncflora"
+BASE_PATH="apps/biblio"
+ES="http://localhost:9200/cncflora/biblio"
+LANG=""
+CONNECT="http://localhost:8080/connect"
+BETA="true"

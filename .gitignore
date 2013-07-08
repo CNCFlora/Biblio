@@ -1,0 +1,8 @@
+*.swp
+*~
+config.ini
+config-*.ini
+composer.phar
+vendor
+data
+tmp
