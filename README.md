@@ -10,7 +10,7 @@ Copy resources/config.ini-dist to resources/config.ini and fill in properly.
 
 ## Run Local
 
-    cd src/ && php -S localhost:8000 route.php
+    php -S localhost:8000 router.php
 
 ## About the app
 
