@@ -29,5 +29,6 @@
     "created":"Criado",
     "modified":"Modificado",
     "contact":"Contato",
-    "status":"Status"
+    "status":"Status",
+    "from-title": "Do título"
 }
