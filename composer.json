@@ -1,8 +1,18 @@
 {
+	"autoload": {
+		"psr-0": {
+			"cncflora": "src"
+		}
+	},
+	
     "require": {
         "restserver/restserver":"dev-master",
-        "mustache/mustache": "dev-master",
+        "mustache/mustache": "dev-master",        
+        "nano-php/nano-php": "dev-master"
+    },
+    "require-dev": {
         "jaz303/phake": "dev-master",
-        "chill/chill": "dev-master"
+        "phpunit/phpunit": "*",
+        "phpunit/phpunit-story": "*"
     }
 }
