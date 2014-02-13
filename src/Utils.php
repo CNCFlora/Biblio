@@ -1,5 +1,6 @@
 <?php
 
+use Symfony\Component\Yaml\Yaml;
 
 class Utils {
 
@@ -12,20 +13,45 @@ class Utils {
     public static function init() {
         self::config();
         self::$data = __DIR__.'/../data';
-        self::$couch = "http://".COUCH_HOST."/".COUCH_BASE;
-        self::$couchdb = new Chill\Client(COUCH_AUTH."@".COUCH_HOST,COUCH_BASE);
+        self::$couch = "http://".COUCHDB_HOST.":".COUCHDB_PORT."/".COUCHDB_BASE;
+        if(defined('COUCHDB_AUTH')) {
+            self::$couchdb = new Chill\Client(COUCHDB_AUTH."@".COUCHDB_HOST.":".COUCHDB_PORT,COUCHDB_BASE);
+        } else {
+            self::$couchdb = new Chill\Client(COUCHDB_HOST.":".COUCHDB_PORT,COUCHDB_BASE);
+        }
         self::$strings = json_decode(file_get_contents(__DIR__."/../resources/locales/".LANG.".json"));
     }
 
     public static function config() {
-        $ini = parse_ini_file(__DIR__."/../resources/config.ini");
         $data = array();
-        foreach($ini as $k=>$v) {
-            $data[$k] = $v;
-            if(!defined($k)) {
-                define($k,$v);
+
+        $array = Yaml::parse(__DIR__."/../resources/config.yml");
+        foreach($array as $key=>$value) {
+            $data[strtoupper($key)] = $value;
+        }
+
+        if(isset($data['ETCD'])) {
+            $keys = json_decode( file_get_contents($data['ETCD']."/v2/keys/?recursive=true") );
+            foreach($keys->node->nodes as $node) {
+                if(isset($node->nodes)) {
+                    foreach($node->nodes as $entry) {
+                        $key  = strtoupper(str_replace("/","_",substr($entry->key,1)));
+                        if(isset($entry->value) && !is_null($entry->value)) {
+                            $data[$key] = $entry->value;
+                        }
+                    }
+                }
             }
         }
+
+        foreach($data as $k=>$v) {
+            if(strlen($v) >= 1) {
+                if(!defined($k)) {
+                    define($k,$v);
+                }
+            }
+        }
+
         return $data;
     }
 

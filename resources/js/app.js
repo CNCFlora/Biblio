@@ -1,21 +1,21 @@
 head.js(connect+'/js/connect.js')
-    .js('resources/js/jquery.min.js')
+    .js(base+'resources/js/jquery.min.js')
 .ready(function(){
-head.js('resources/js/bootstrap.min.js')
-    .js('resources/js/bootstrap.fileInput.js')
-    .js('resources/js/onde.js')
+head.js(base+'resources/js/bootstrap.min.js')
+    .js(base+'resources/js/bootstrap.fileInput.js')
+    .js(base+'resources/js/onde.js')
     .ready(function(){
         Connect({
             onlogin: function(user) {
                 if(!logged) {
-                    $.post(base+'/login',JSON.stringify(user),function(){
+                    $.post(base+'login',JSON.stringify(user),function(){
                         location.reload();
                     });
                 }
             },
             onlogout: function(nothing){
                 if(logged) {
-                    $.post(base+'/logout',nothing,function(){
+                    $.post(base+'logout',nothing,function(){
                         location.reload();
                     });
                 }
@@ -36,7 +36,7 @@ head.js('resources/js/bootstrap.min.js')
                 var data = form.getData().data;
                 $.post($("#data").attr("action"),JSON.stringify(data),function(r){
                     if(typeof r != "object") r = JSON.parse(r);
-                    location.href=location.protocol+'//'+location.hostname+''+base+'/biblio/'+r._id;
+                    location.href=location.protocol+'//'+location.hostname+''+base+'biblio/'+r._id;
                 });
                 return false;
             });

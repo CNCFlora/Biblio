@@ -28,7 +28,9 @@ class View implements \Rest\View {
         $m = new \Mustache_Engine(array('partials'=>$this->partials));
         $content = $m->render($this->template,$props);
 
-        $content = preg_replace('@=[\'"]/([^\'"]*)[\'"]@','="/'.BASE_PATH.'/\1"',$content);
+        if(defined('BASE_PATH')) {
+            $content = preg_replace('@=[\'"]/([^\'"]*)[\'"]@','="'.BASE_PATH.'/\1"',$content);
+        }
 
         $rest->getResponse()->setResponse($content);
         return $rest ;

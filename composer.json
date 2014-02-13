@@ -3,6 +3,7 @@
         "restserver/restserver":"dev-master",
         "mustache/mustache": "dev-master",
         "jaz303/phake": "dev-master",
-        "chill/chill": "dev-master"
+        "chill/chill": "dev-master",
+        "symfony/yaml": "2.5.*@dev"
     }
 }

@@ -1,7 +1,6 @@
 *.swp
 *~
-config.ini
-config-*.ini
+config.yml
 composer.phar
 vendor
 data
@@ -9,3 +8,4 @@ tmp
 .buildpath
 .project
 .settings
+.vagrant

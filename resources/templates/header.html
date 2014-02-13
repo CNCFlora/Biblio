@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="/resources/css/app.css" />
     <script>
         var base = '/{{BASE_PATH}}';
-        var couchdb = 'http://{{COUCH_HOST}}/{{COUCH_BASE}}';
-        var connect = '{{CONNECT}}';
+        var couchdb = 'http://{{COUCHDB_HOST}}:{{COUCHDB_PORT}}/{{COUCHDB_BASE}}';
+        var connect = 'http://{{CONNECT_HOST}}:{{CONNECT_PORT}}';
         {{#logged}}var logged = true;{{/logged}}
         {{^logged}}var logged = false;{{/logged}}
     </script>
@@ -26,7 +26,6 @@
     <div class="container">
         <header>
             <a href="/index.html"><h1>{{strings.bibliografias}}</h1></a>
-            {{#BETA}}<img src="/resources/img/beta.jpg" />{{/BETA}}
         </header>
         <nav class="navbar span12">
             <div class="navbar-inner">

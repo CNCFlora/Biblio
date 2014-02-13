@@ -1,0 +1,5 @@
+etcd: "http://10.0.2.2:4001"
+couchdb_auth: ""
+couchdb_base: "cncflora"
+base_path: ""
+lang: "pt"

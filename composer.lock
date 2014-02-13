@@ -1,5 +1,5 @@
 {
-    "hash": "805f286a8fd96723f3883d804dd64a95",
+    "hash": "7039e4a7f95c509cb9694c7231108ce2",
     "packages": [
         {
             "name": "chill/chill",
@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dancryer/Chill.git",
-                "reference": "v1.0.0"
+                "reference": "1aa84f79e875f487b5cb062312e98979ed351db3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dancryer/Chill/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/dancryer/Chill/zipball/1aa84f79e875f487b5cb062312e98979ed351db3",
+                "reference": "1aa84f79e875f487b5cb062312e98979ed351db3",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "database",
                 "library"
             ],
-            "time": "2013-02-26 11:51:20"
+            "time": "2013-10-09 15:40:13"
         },
         {
             "name": "jaz303/phake",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaz303/phake.git",
-                "reference": "8bf99fd8c5a49fbf2f27d8e50bfd902628e5ce05"
+                "reference": "ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaz303/phake/zipball/8bf99fd8c5a49fbf2f27d8e50bfd902628e5ce05",
-                "reference": "8bf99fd8c5a49fbf2f27d8e50bfd902628e5ce05",
+                "url": "https://api.github.com/repos/jaz303/phake/zipball/ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e",
+                "reference": "ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e",
                 "shasum": ""
             },
             "require": {
@@ -68,6 +68,11 @@
                 "bin/phake"
             ],
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "phake": "lib/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -82,9 +87,10 @@
             "homepage": "http://github.com/jaz303/phake",
             "keywords": [
                 "Tasks",
+                "automation",
                 "cli"
             ],
-            "time": "2013-02-07 00:29:57"
+            "time": "2014-01-04 20:27:15"
         },
         {
             "name": "mustache/mustache",
@@ -92,16 +98,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "v2.3.0"
+                "reference": "996c944fa2ddedddfaf0d276b913809d6a32fd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/996c944fa2ddedddfaf0d276b913809d6a32fd85",
+                "reference": "996c944fa2ddedddfaf0d276b913809d6a32fd85",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
             },
             "type": "library",
             "autoload": {
@@ -126,20 +135,20 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2013-04-02 03:56:30"
+            "time": "2014-01-09 00:36:09"
         },
         {
             "name": "restserver/restserver",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "http://github.com/diogok/restserver",
-                "reference": "e8dc45fcbde69147175e250d11f41654ec025cdd"
+                "url": "https://github.com/diogok/restserver.git",
+                "reference": "e135b4b041d9a129cb0662641d2ace7437cf64fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/diogok/restserver/archive/e8dc45fcbde69147175e250d11f41654ec025cdd.zip",
-                "reference": "e8dc45fcbde69147175e250d11f41654ec025cdd",
+                "url": "https://api.github.com/repos/diogok/restserver/zipball/e135b4b041d9a129cb0662641d2ace7437cf64fc",
+                "reference": "e135b4b041d9a129cb0662641d2ace7437cf64fc",
                 "shasum": ""
             },
             "require": {
@@ -161,7 +170,54 @@
                 "http",
                 "rest"
             ],
-            "time": "2013-01-22 01:49:56"
+            "time": "2013-07-28 06:22:31"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "9921872611710df49cf035c259e5a461ea2d0f8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9921872611710df49cf035c259e5a461ea2d0f8c",
+                "reference": "9921872611710df49cf035c259e5a461ea2d0f8c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-01-07 13:29:57"
         }
     ],
     "packages-dev": [
@@ -175,7 +231,8 @@
         "restserver/restserver": 20,
         "mustache/mustache": 20,
         "jaz303/phake": 20,
-        "chill/chill": 20
+        "chill/chill": 20,
+        "symfony/yaml": 20
     },
     "platform": [
 

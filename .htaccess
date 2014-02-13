@@ -7,3 +7,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ src/index.php?q=/$1  [QSA]
+
